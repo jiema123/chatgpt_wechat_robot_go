@@ -29,6 +29,8 @@ type Configuration struct {
 	ReplyPrefix string `json:"reply_prefix"`
 	// 清空会话口令
 	SessionClearToken string `json:"session_clear_token"`
+	// 规则 system user assistant
+	Role string `json:"role"`
 }
 
 var config *Configuration
@@ -44,6 +46,7 @@ func LoadConfig() *Configuration {
 			MaxTokens:         512,
 			Model:             "text-davinci-003",
 			Temperature:       0.9,
+			Role:              "assistant",
 			SessionClearToken: "下个问题",
 		}
 

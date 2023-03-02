@@ -157,7 +157,7 @@ func buildUserReply(reply string) string {
 	// 2.如果用户有配置前缀，加上前缀
 	reply = config.LoadConfig().ReplyPrefix + "\n" + reply
 	reply = strings.Trim(reply, "\n")
-
+	
 	// 3.返回拼接好的字符串
 	return reply
 }
