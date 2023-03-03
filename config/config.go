@@ -31,6 +31,12 @@ type Configuration struct {
 	SessionClearToken string `json:"session_clear_token"`
 	// 规则 system user assistant
 	Role string `json:"role"`
+	// 画图画口令
+	ImageStartKey string `json:"image_start_key"`
+	//0-10 的数字
+	ImageN int `json:"image_n"`
+	//256x256, 512x512, or 1024x1024.
+	ImageSize string `json:"image_size"`
 }
 
 var config *Configuration
@@ -44,10 +50,13 @@ func LoadConfig() *Configuration {
 			AutoPass:          false,
 			SessionTimeout:    60,
 			MaxTokens:         512,
-			Model:             "text-davinci-003",
+			Model:             "gpt-3.5-turbo-0301",
 			Temperature:       0.9,
 			Role:              "assistant",
 			SessionClearToken: "下个问题",
+			ImageStartKey:     "画图画",
+			ImageN:            10,
+			ImageSize:         "256x256",
 		}
 
 		// 判断配置文件是否存在，存在直接JSON读取

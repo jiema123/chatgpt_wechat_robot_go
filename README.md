@@ -70,7 +70,10 @@ $ go run main.go
   "temperature": 1,                 # GPT热度，0到1，默认0.9，数字越大创造力越强，但更偏离训练事实，越低越接近训练事实
   "reply_prefix": "来自机器人回复：", # 私聊回复前缀
   "session_clear_token": "清空会话",  # 会话清空口令，默认`下一个问题`
-  "role": "assistant"
+  "role": "assistant",
+  "image_start_key": "画图画",
+  "image_n": 2,
+  "image_size": "512x512"
 }
 ```
 
